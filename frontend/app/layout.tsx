@@ -11,13 +11,19 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: "#0a0b0d",
-  colorScheme: "dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fdfdfc" },
+    { media: "(prefers-color-scheme: dark)", color: "#11110f" },
+  ],
+  colorScheme: "light dark",
 }
+
+const themeScript = `(function(){try{var t=localStorage.getItem('devteams-theme')||'system';var d=t==='dark'||(t==='system'&&matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',d);document.documentElement.style.colorScheme=d?'dark':'light'}catch(e){}})()`
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`dark bg-background ${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`bg-background ${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
+      <head><script dangerouslySetInnerHTML={{ __html: themeScript }} /></head>
       <body>{children}</body>
     </html>
   )
