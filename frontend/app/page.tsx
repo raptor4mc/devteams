@@ -1,8 +1,8 @@
-import TopBar from "@/components/TopBar.tsx";
-import Sidebar from "@/components/Sidebar.tsx";
-import TrendingPanel from "@/components/TrendingPanel.tsx";
-import BottomTabBar from "@/components/BottomTabBar.tsx";
-import FeedList from "@/components/FeedList.tsx";
+import TopBar from "@/component/TopBar.tsx";
+import Sidebar from "@/component/Sidebar.tsx";
+import TrendingPanel from "@/component/TrendingPanel.tsx";
+import BottomTabBar from "@/component/BottomTabBar.tsx";
+import FeedList from "@/component/FeedList.tsx";
 import { mockFeed } from "@/data/mockFeed.tsx";
 
 export default function HomePage() {
