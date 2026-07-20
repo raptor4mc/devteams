@@ -1,12 +1,24 @@
+import { BottomTabBar } from './components/BottomTabBar';
+import { FeedList } from './components/FeedList';
+import { RightSidebar, Sidebar } from './components/Sidebar';
+import { feedItems, trendingThreads } from './data/feed';
 
-// app/page.tsx
-
-// 1. Define the component as a function
 export default function Home() {
   return (
-    <main>
-      <h1>Hello DevTeams</h1>
-      <p>Your social media app is running!</p>
+    <main className="appShell">
+      <Sidebar />
+      <section className="feedColumn">
+        <header className="feedHeader">
+          <div>
+            <p className="eyebrow">Rust first. Frontend next.</p>
+            <h1>Home Feed</h1>
+          </div>
+          <button className="headerAction">Latest</button>
+        </header>
+        <FeedList items={feedItems} />
+      </section>
+      <RightSidebar threads={trendingThreads} />
+      <BottomTabBar />
     </main>
   );
-}   
+}
