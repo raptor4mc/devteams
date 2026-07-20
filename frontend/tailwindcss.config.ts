@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
+  content: ["./app/**/*.{ts,tsx}", "./component/**/*.{ts,tsx}"],
   darkMode: undefined, // there is no light/dark switching — dark is the only mode
   theme: {
     extend: {
