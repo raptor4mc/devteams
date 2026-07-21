@@ -12,6 +12,7 @@ export default function HomePage() {
       <div className="flex">
         <Sidebar />
         <main className="flex-1 min-w-0 px-4 py-4 pb-20 md:pb-4">
+        <meta name="google-site-verification" content="dvKKYev6im0XU4AEzXiDjxSktZTi5qMS__k-Yqq38yk" />
           <FeedList items={mockFeed} />
         </main>
         <TrendingPanel />
